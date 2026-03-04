@@ -2,6 +2,8 @@
 
 This is not a particularly good explanation right now. It lacks visual aids. You can still scroll down to the final section of this write-up and do what it says, if you want to watch its operation or puzzle it out. I do recommend running it in Golly, though; nothing here is a heavy download.
 
+I am also self taught in all of this. The fact that my project was well conceived and succeeded has no bearing on the fact that I at times do not know what I am talking about. Sorry in advance.
+
 # background on cellular automata
 This is a constructive demonstration of a self-replicating universal constructor in an isotropic non-totalistic 2-state Moore neighborhood cellular automaton.
 
