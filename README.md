@@ -27,15 +27,13 @@ There is one term from the summary statement at the top that I have not discusse
 
 This project is a constructive example of a universal constructor run on an input pattern, whose output pattern consists of a copy of the original universal constructor and input pattern, with some translative offset. In addition, when it ceases use of a given universal constructor instance, it uses later-constructed universal constructor instances to "clean up", converting unused instances back into default state-0 cells.
 
-More information on universal constructors in CA, including the oldest constructed example by John von Neumann, can be found here {https://en.wikipedia.org/wiki/Von_Neumann_universal_constructor}
+More information on universal constructors in CA, including the oldest constructed example by John von Neumann, can be found here: https://en.wikipedia.org/wiki/Von_Neumann_universal_constructor
 
 # how is this done? (1)
 
 Much of the broader study of CA, especially ones similar to the one studied here, has been focused on certain types of fixed points and periodic orbits of the rule function. Somewhat whimsically, these fixed points were named "still lifes", "oscillators", and "spaceships" by Conway and other early enthusiasts of his CA: The Game of Life. A still life is a fixed point of the rule function, a pattern of cell states C where R(C) = C. An oscillator is a periodic orbit of the rule function, a pattern of cell states C where R^p(C) = C for some period p. Let T(x,y,C) be a function taking in two integers x, y, and a pattern of cell states C and returning the pattern of cell states C translated by (x,y): then a spaceship is a pattern of cell states C where R^p(C) = T(x,y,C) for some period p and integers x, y. One can view an oscillator as a degenerate case of a spaceship where x, y are zero, and one can view a still life as a degenerate case of an oscillator where p = 1.
 
 Still lifes, oscillators and spaceships are the smallest building blocks of this project, other than individual cells themselves. At this low level, this project is composed of only four parts: (In keeping with CA tradition, these have descriptive nontechnical names).
-
-DESCRIPTION OF RUN-LENGTH ENCODING TBA
 
 Demonstrations of this construction will use Golly. You may view behavior of the components of this construction below by copying-and-pasting the text in quotation marks into Golly, and setting the rule to "B2ci3aery4eqr5aeiq6acn78/S01c2ei3-i4ijrtz5ainry7c8". The text in quotation marks is a run-length-encoded description of the component.
 
@@ -96,6 +94,8 @@ When the / codon interacts with the elbow, the closest Dot in the elbow reappear
 When the S codon interacts with the elbow, the closest Dot in the elbow reappears translated six cells toward the oncoming Frog-s. Note that the elbow's position is 'to one side' of the duplicated tape: this interaction also causes the elbow to appear on the opposite side. This is only used once in the tape, and is used only when there is one Dot in the elbow.
 
 IMAGES TBA: {+,-,Z,Y,X,/,S codons}
+
+Finding these codons was, to put it bluntly, damn near impossible. I am not an experienced nor an especially skilled programmer, and I was much less skilled when I began searching for codons to accomplish what I wanted to accomplish. My first and only search program took in five parameters: minimum and maximum spacing between subsequent Frog-s, number of Frog-s in the codon to be found, starting configuration and ending configuration. The program searched 
 
 The elbow can, if the sequence of codons is not chosen carefully, enter undefined behavior, and become unusable. Avoiding this is difficult and must be considered in constructing the tape; the logic underlying these choices can be seen in programs/pathfind.py (TBA. I have to rewrite it for this demo. because my last computer was destroyed.)
 
